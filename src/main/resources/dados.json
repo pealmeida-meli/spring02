@@ -1,0 +1,21 @@
+[ {
+  "placa" : "ABC-1234",
+  "modelo" : "Gol",
+  "valor" : 30000.0
+}, {
+  "placa" : "IJK-1234",
+  "modelo" : "Onix",
+  "valor" : 35000.0
+}, {
+  "placa" : "mno-123",
+  "modelo" : "Fusca",
+  "valor" : 10000.0
+}, {
+  "placa" : "ert-123",
+  "modelo" : "Onix",
+  "valor" : 10000.0
+}, {
+  "placa" : "ert-123",
+  "modelo" : "i30",
+  "valor" : 10000.0
+} ]
