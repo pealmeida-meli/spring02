@@ -28,6 +28,21 @@ public class VeiculoController {
         return ResponseEntity.ok(service.getAllVeiculos());
     }
 
+    @GetMapping("/all/{modelo}")
+    public ResponseEntity<List<VeiculoDto>> getAllByModelo(@PathVariable String modelo) {
+        return ResponseEntity.ok(service.getAllByModelo(modelo));
+    }
+
+    @GetMapping("/sorted-by-valor")
+    public ResponseEntity<List<VeiculoDto>> getAllOrderByValor() {
+        return ResponseEntity.ok(service.getAllOrderByValor());
+    }
+
+    @GetMapping("/sorted-by-modelo")
+    public ResponseEntity<List<VeiculoDto>> getAllOrderByModelo() {
+        return ResponseEntity.ok(service.getAllOrderByModelo());
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void saveVeiculo(@RequestBody Veiculo veiculo) {
