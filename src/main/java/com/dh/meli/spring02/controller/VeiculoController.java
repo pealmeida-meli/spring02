@@ -19,11 +19,7 @@ public class VeiculoController {
 
     @GetMapping("/{placa}")
     public ResponseEntity<Veiculo> getVeiculo(@PathVariable String placa) {
-        var v = repository.getVeiculo(placa);
-        if (v == null) {
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(v);
+        return ResponseEntity.ok(repository.getVeiculo(placa));
     }
 
     @GetMapping
