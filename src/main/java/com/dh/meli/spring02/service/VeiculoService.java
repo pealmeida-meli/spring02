@@ -1,10 +1,12 @@
 package com.dh.meli.spring02.service;
 
+import com.dh.meli.spring02.dto.VeiculoDto;
 import com.dh.meli.spring02.model.Veiculo;
 import com.dh.meli.spring02.repository.VeiculoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class VeiculoService implements VeiculoServiceInterface {
@@ -15,13 +17,13 @@ public class VeiculoService implements VeiculoServiceInterface {
     }
 
     @Override
-    public Veiculo getVeiculo(String placa) {
-        return repository.getVeiculo(placa);
+    public VeiculoDto getVeiculo(String placa) {
+        return new VeiculoDto(repository.getVeiculo(placa));
     }
 
     @Override
-    public List<Veiculo> getAllVeiculos() {
-        return repository.getAllVeiculos();
+    public List<VeiculoDto> getAllVeiculos() {
+        return repository.getAllVeiculos().stream().map(VeiculoDto::new).collect(Collectors.toList());
     }
 
     @Override

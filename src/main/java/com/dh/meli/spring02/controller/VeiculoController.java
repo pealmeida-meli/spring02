@@ -1,5 +1,6 @@
 package com.dh.meli.spring02.controller;
 
+import com.dh.meli.spring02.dto.VeiculoDto;
 import com.dh.meli.spring02.model.Veiculo;
 import com.dh.meli.spring02.service.VeiculoServiceInterface;
 import org.springframework.http.HttpStatus;
@@ -18,14 +19,13 @@ public class VeiculoController {
     }
 
     @GetMapping("/{placa}")
-    public ResponseEntity<Veiculo> getVeiculo(@PathVariable String placa) {
+    public ResponseEntity<VeiculoDto> getVeiculo(@PathVariable String placa) {
         return ResponseEntity.ok(service.getVeiculo(placa));
     }
 
     @GetMapping
-    public ResponseEntity<List<Veiculo>> getAllVeiculos() {
-        var v = service.getAllVeiculos();
-        return ResponseEntity.ok(v);
+    public ResponseEntity<List<VeiculoDto>> getAllVeiculos() {
+        return ResponseEntity.ok(service.getAllVeiculos());
     }
 
     @PostMapping
